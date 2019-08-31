@@ -78,19 +78,29 @@
 	</bean>
 	
 	
-	
 	<!-- action -->
 	<!-- 注意：Action对象作用范围一定是多例的，这样才符合struts2架构 -->
 	<bean name="userAction" class="cn.itheima.web.action.UserAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
 	</bean>
+	<bean name="customerAction" class="cn.itheima.web.action.CustomerAction" scope="prototype">
+		<property name="cs" ref="customerService"></property>
+	</bean>
+	
 	<!-- service -->
 	<bean name="userService" class="cn.itheima.service.impl.UserServiceImpl">
 		<property name="ud" ref="userDao"></property>
 	</bean>
+	<bean name="customerService" class="cn.itheima.service.impl.CustomerServiceImpl">
+		<property name="cd" ref="customerDao"></property>
+	</bean>
+	
 	<!-- dao -->
 	<bean name="userDao" class="cn.itheima.dao.impl.UserDaoImpl">
 		<!-- 注入sessionFactoty -->
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean name="customerDao" class="cn.itheima.dao.impl.CustomerDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 </beans>
