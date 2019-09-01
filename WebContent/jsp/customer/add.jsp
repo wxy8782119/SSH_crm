@@ -7,9 +7,20 @@
 <TITLE>添加客户</TITLE> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
-<LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
-	rel=stylesheet>
-
+<LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css rel=stylesheet>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/my.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		loadSelect("006","level","cust_level.dict_id");
+		loadSelect("001","industry","cust_industry.dict_id");
+		loadSelect("002","source","cust_source.dict_id");
+		
+	});
+	
+</script>
 
 <META content="MSHTML 6.00.2900.3492" name=GENERATOR>
 </HEAD>
@@ -47,8 +58,6 @@
 						</TABLE>
 						
 						<TABLE cellSpacing=0 cellPadding=5  border=0>
-						  
-						    
 							<TR>
 								<td>客户名称：</td>
 								<td>
@@ -56,29 +65,17 @@
 														style="WIDTH: 180px" maxLength=50 name="cust_name">
 								</td>
 								<td>客户级别 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="cust_level">
-								</td>
+								<td id="level"></td>
 							</TR>
 							
 							<TR>
-								
 								<td>信息来源 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="cust_source">
-								</td>
-								<td>联系人：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="cust_linkman">
-								</td>
+								<td id="source"></td>
+								<td>客户行业：</td>
+								<td id="industry"></td>
 							</TR>
 							
 							<TR>
-								
-								
 								<td>固定电话 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2

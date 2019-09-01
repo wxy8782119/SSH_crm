@@ -13,7 +13,7 @@ import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 import cn.itheima.dao.UserDao;
 import cn.itheima.domain.User;
 //HibernateDaoSupport为dao注入sessionFactory
-public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
+public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {
 
 	@Override
 	public User getByUserCode(final String user_code) {
@@ -43,9 +43,9 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 		
 	}
 
-	@Override
-	public void save(User u) {
-		getHibernateTemplate().save(u);
-	}
+//	@Override
+//	public void save(User u) {
+//		getHibernateTemplate().save(u);
+//	}
 
 }

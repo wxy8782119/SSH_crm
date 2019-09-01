@@ -33,6 +33,15 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
 		ActionContext.getContext().put("pageBean", pb);
 		return "list";
 	}
+	
+	public String add() throws Exception {
+		//1.调用Service，保存Customer对象
+		cs.save(customer);
+		//2.重定向到客户列表Action
+		return "tolist";
+	}
+
+
 
 	@Override
 	public Customer getModel() {
