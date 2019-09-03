@@ -47,6 +47,14 @@ public class LinkManAction extends ActionSupport implements ModelDriven<LinkMan>
 		//2.重定向到联系人列表（404）
 		return "toList";
 	}
+	
+	public String toEdit() throws Exception {
+		//1.调用Service根据id获得客户对象
+		LinkMan lm = lms.getById(linkMan.getLkm_id());
+		//2.将客户对象放置到request域，并转发到编辑页面
+		ActionContext.getContext().put("linkMan", lm);
+		return "edit";
+	}
 
 	@Override
 	public LinkMan getModel() {

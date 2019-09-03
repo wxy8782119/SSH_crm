@@ -43,7 +43,7 @@
 		
 		<!-- 联系人Action配置 -->
 		<action name="LinkManAction_*" class="linkManAction" method="{1}">
-			<!-- <result name="add">/jsp/linkman/add.jsp</result> -->
+			<result name="edit">/jsp/linkman/add.jsp</result>
 			<result name="error">/jsp/linkman/list.jsp</result>
 			<result name="toList" type="redirectAction">
 				<param name="namespace">/</param>

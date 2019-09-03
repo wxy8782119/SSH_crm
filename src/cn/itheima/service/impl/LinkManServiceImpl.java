@@ -27,12 +27,17 @@ public class LinkManServiceImpl implements LinkManService {
 	}
 	
 	@Override
+	public LinkMan getById(Long lkm_id) {
+		return lmd.getById(lkm_id);
+	}
+	
+	@Override
 	public void save(LinkMan linkMan) {
-		lmd.save(linkMan);
+		lmd.saveOrUpdate(linkMan);
 	}
 
 	public void setLmd(LinkManDao lmd) {
 		this.lmd = lmd;
 	}
-	
+
 }
