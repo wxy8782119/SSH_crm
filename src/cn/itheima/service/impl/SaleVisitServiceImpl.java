@@ -30,9 +30,15 @@ public class SaleVisitServiceImpl implements SaleVisitService {
 		pb.setList(list);
 		return pb;
 	}
+	
+	@Override
+	public SaleVisit getById(String visit_id) {
+		return svd.getById(visit_id);
+	}
 
 	public void setSvd(SaleVisitDao svd) {
 		this.svd = svd;
 	}
+
 	
 }

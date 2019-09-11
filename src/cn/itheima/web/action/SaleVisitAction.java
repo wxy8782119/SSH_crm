@@ -47,6 +47,19 @@ public class SaleVisitAction extends ActionSupport implements ModelDriven<SaleVi
 		return "list";
 	}
 	
+	//去往编辑页面回显
+	public String toEdit() throws Exception {
+		//1.调用Service根据id获得客户对象
+		SaleVisit sv = svs.getById(saleVisit.getVisit_id());
+		//2.将客户对象放置到request域，并转发到编辑页面
+		ActionContext.getContext().put("saleVisit", sv);
+		//3.转发到add.jsp
+		return "add";
+
+
+		
+	}
+	
 	@Override
 	public SaleVisit getModel() {
 		return saleVisit;

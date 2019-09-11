@@ -35,6 +35,7 @@
 		method="post"  onsubmit="return checkForm(['user.user_id','visit_nexttime']);" >
 		<!-- 隐藏域回显当前编辑的拜访记录id -->
 		<s:if test='visit_id!=null&&visit_id!=""'>
+			<!-- 隐藏域回显当前编辑的拜访记录id -->
 			<input  type="hidden"  name="visit_id" value="<s:property value="#saleVisit.visit_id" />"  />
 		</s:if>
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
@@ -138,6 +139,6 @@
 			</TBODY>
 		</TABLE>
 	</FORM>
-	<s:debug></s:debug>
+	
 </BODY>
 </HTML>
