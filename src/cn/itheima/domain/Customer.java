@@ -1,5 +1,8 @@
 package cn.itheima.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Customer {
 	private Long cust_id;
 	private String cust_name;
@@ -15,6 +18,15 @@ public class Customer {
 	private BaseDict cust_industry;//客户行业
 	private BaseDict cust_level;//客户级别
 	
+	//表达客户与拜访记录的一对多
+	private Set<SaleVisit> saleVisits = new HashSet<SaleVisit>();
+	
+	public Set<SaleVisit> getSaleVisits() {
+		return saleVisits;
+	}
+	public void setSaleVisits(Set<SaleVisit> saleVisits) {
+		this.saleVisits = saleVisits;
+	}
 	public BaseDict getCust_source() {
 		return cust_source;
 	}
