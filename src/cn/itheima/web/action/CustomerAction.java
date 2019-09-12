@@ -1,6 +1,7 @@
 package cn.itheima.web.action;
 
 import java.io.File;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.criterion.DetachedCriteria;
@@ -67,7 +68,12 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
 		return "edit";
 	}
 	
-
+	public String industryCount() throws Exception {
+		List<Object[]> list = cs.getIndustryCount();
+		ActionContext.getContext().put("list", list);
+		return "industryCount";
+	}
+	
 
 	@Override
 	public Customer getModel() {

@@ -34,8 +34,14 @@ public class CustomerServiceImpl implements CustomerService {
 		return cd.getById(cust_id);
 	}
 	
+	@Override
+	public List<Object[]> getIndustryCount() {
+		return cd.getIndustryCount();
+	}
+	
 	public void setCd(CustomerDao cd) {
 		this.cd = cd;
 	}
+
 
 }
